@@ -1,0 +1,52 @@
+/************************************************************************/
+/******************************* VARIABLES ******************************/
+/************************************************************************/
+
+
+/* COLORS */
+$primary: #F74E21;
+$secondary: #FFBD41;
+$tetriary: #F03558;
+
+$white: #FFFFFF;
+$black: #000000;
+$peach: #FB7A58;
+$lightpeach: #FDA36E;
+$lightestpeach: #f4b27e;
+$lightyellow: #FFDE9F;
+$transparent: rgba(255, 255, 255, 0);
+
+$baseColor: $black;
+$baseColorAlt: #707070;
+$footerBG: #E3DFD7;
+$mainBG: #F9F6F1;
+$mainFontSize: 16px;
+
+$transitionTime: 250ms;
+$transitionType: ease;
+
+
+/* MIXINS */
+@mixin transition($x...){
+  -webkit-transition: $x;
+  -moz-transition: $x;
+  -ms-transition: $x;
+  -o-transition: $x;
+  transition: $x;
+}
+
+@mixin transitionAll(){
+    -webkit-transition: all $transitionTime $transitionType;
+    -moz-transition: all $transitionTime $transitionType;
+    transition: all $transitionTime $transitionType;
+}
+
+@mixin dropShadow(){
+  box-shadow: 2px 5px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+@mixin borderRadius(){
+  -webkit-border-radius: 1.5em;
+  -moz-border-radius: 1.5em;
+  border-radius: 1.5em;
+}

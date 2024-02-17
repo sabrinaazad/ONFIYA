@@ -1,0 +1,407 @@
+/************************************************************************/
+/***************************** BLOG STYLES ******************************/
+/************************************************************************/
+
+.archive-template {
+  max-width: 1180px;
+  margin: 0 auto;
+
+  .section--aside {
+    display: none;
+  }
+
+  #nav-posts {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em 0;
+    border-top: 1px solid $secondary;
+    padding-top: 1em;
+    width: 100%;
+
+    .next {
+      text-align: right;
+    }
+  }
+
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+
+    .section--archive {
+      flex-basis: 73%;
+    }
+
+    .section--aside {
+      display: block;
+      flex-basis: 25%;
+    }
+  }
+
+  .post-grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    .post {
+      display: block;
+      margin: 0.5em;
+      border-radius: 1em;
+      background-color: $white;
+      @include dropShadow();
+
+      @include tablet {
+        flex-basis: calc(50% - 1em);
+      }
+
+      .image-wrapper {
+        padding: 10em;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        text-align: center;
+
+        @include tablet {
+          padding: 20vw;
+        }
+
+        @include desktop {
+          padding: 14vw;
+        }
+
+        @include regulardesktop {
+          padding: 7.7em;
+        }
+      }
+
+      .content {
+        text-align: center;
+        padding: 1em;
+
+        h3 {
+          font-size: 1.25em;
+          min-height: 2.5em;
+        }
+
+        .btn {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+.single-template {
+  max-width: 1180px;
+  margin: 0 auto;
+
+  .section--aside {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  .date,
+  .category {
+    margin: 1em 0;
+    display: flex;
+  }
+
+  .category {
+    color: $primary;
+  }
+
+  .date span {
+    color: $primary;
+  }
+
+  .post-categories {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+    margin-left: 0.25em;
+  }
+
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+
+    .section--single {
+      flex-basis: 72%;
+    }
+
+    .section--aside {
+      flex-basis: 25%;
+    }
+  }
+
+  #nav-posts {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em 0;
+    border-top: 1px solid $secondary;
+    padding-top: 1em;
+    width: 100%;
+
+    .next {
+      text-align: right;
+      flex-basis: 40%;
+    }
+
+    .prev {
+      flex-basis: 40%;
+    }
+  }
+
+  .image-wrapper {
+    @include tablet {
+      max-width: 30em;
+      margin: 1em auto;
+    }
+  }
+}
+
+
+.section--team-members {
+  background-image: url("/wp-content/themes/onfiyatheme/assets/dots-bg-2.png");
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 8em 2em;
+
+  .heading {
+    color: $black;
+  }
+
+  .team_slider {
+
+    .slide {
+      display: flex;
+      flex-direction: column;
+
+      .image-wrapper {
+        width: 80%;
+        margin: 2em 1em;
+
+        img {
+          box-shadow: -10px 10px 0px 0px $lightpeach;
+        }
+      }
+
+      .content {
+        color: $white;
+        background-color: $primary;
+        padding: 1em;
+        a {
+          &:hover {
+            color: $secondary;
+          }
+        }
+        .btn {
+          &:hover {
+            color: $white;
+            background-color: $tetriary;
+            border-color: $tetriary;
+          }
+        }
+        @include desktop {
+          padding: 2em 4em;
+        }
+
+      }
+
+      .subheading,
+      .heading,
+      .phone a,
+      .email a {
+        font-size: 1em;
+        color: $white;
+      }
+
+      .subheading {
+        text-transform: initial;
+      }
+
+      .heading {
+        font-size: 1.25em;
+        margin: 1em 0;
+        text-transform: uppercase;
+      }
+
+      .phone,
+      .email {
+        margin: 0.5em 0;
+
+      }
+
+      p {
+        font-size: 0.9em;
+      }
+
+      .btn {
+        display: block;
+      }
+    }
+  }
+
+  .team_slider_2 {
+    margin: 2em 0;
+
+    &.slick-slider .slick-track {
+      margin: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .slick-list {
+      padding: 2em !important;
+    }
+
+    .slide {
+      margin: 1em;
+
+      img {
+        min-width: 3em;
+
+        @include tablet {
+          min-width: 5em;
+        }
+
+        box-shadow: none;
+      }
+
+      &.slick-current {
+        img {
+          box-shadow: -5px 5px 0px 0px $tetriary;
+        }
+      }
+    }
+  }
+
+  @include tablet {
+
+    .slick-slider .slick-track,
+    .slick-slider .slick-list {
+      overflow: visible;
+    }
+
+    .team_slider {
+      .slide {
+        flex-direction: row;
+        justify-content: space-between;
+
+        .image-wrapper {
+          flex-basis: 30%;
+          position: relative;
+
+        }
+
+        .content {
+          flex-basis: 65%;
+          text-align: left;
+
+          .btn {
+            display: table-cell;
+          }
+        }
+      }
+    }
+
+    .team_slider_2 {
+      max-width: 60em;
+      margin: 2em auto;
+
+      .slide {
+        margin: 1em 0;
+
+        img {
+          max-width: 8em;
+
+        }
+      }
+    }
+  }
+
+  @include desktop {
+    .team_slider {
+      .slide {
+        .image-wrapper {
+          left: 5em;
+          top: -6em;
+        }
+      }
+    }
+  }
+}
+
+.section--team-member {
+  .single {
+    text-align: center;
+    max-width: 50em;
+    margin: 3em auto;
+
+    .image-wrapper {
+      width: 50%;
+      margin: 2em auto;
+
+      img {
+        box-shadow: 15px 15px 0px 0px $primary;
+      }
+    }
+    .content {
+      a {
+        &:hover {
+          color: $secondary;
+        }
+      }
+    }
+  }
+}
+
+.section--programs {
+  background-image: url("/wp-content/themes/onfiyatheme/assets/dots-bg-4.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  .panels {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .panel {
+      width: 20em;
+      margin: 1em;
+      text-align: center;
+      background: $white;
+      padding: 1em;
+      @include borderRadius();
+      @include dropShadow();
+      border: 0.2em solid $secondary;
+      position: relative;
+      .heading {
+        font-size: 1.25em;
+      }
+      &:hover {
+        &::after {
+          position: absolute;
+          top: -0.1em;
+          left: -0.1em;
+          width: 101%;
+          height: 101%; 
+          border: 0.2em solid $tetriary;
+          background-color: $tetriary;
+          color: $white;
+          font-family: MontserratBold;
+          opacity: 0.8;
+          content: "LEARN MORE";
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @include borderRadius();
+        }
+      }
+    }
+  }
+}
